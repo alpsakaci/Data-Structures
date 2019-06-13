@@ -104,7 +104,7 @@ int chtbl_lookup(const CHTbl *htbl, void **data){
 
 	//Hash the key
 	bucket = htbl->h(*data) % htbl->buckets;
-	//Seatch for the data in the bucket.
+	//Search for the data in the bucket.
 	for (element = list_head(&htbl->table[bucket]); element != NULL; element = list_next(element)){
 		if (htbl->match(*data, list_data(element))) {
 			// Pass back the data from the table
